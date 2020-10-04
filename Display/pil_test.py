@@ -7,17 +7,26 @@ import logging
 import time
 from PIL import Image,ImageDraw,ImageFont
 import traceback
+import sys
+sys.path.append('../Google_Cal')
+from quickstart import getCurrEvent
 
 logging.basicConfig(level=logging.DEBUG)
     
 # Drawing on the image
 logging.info("Drawing")    
-nh_font = ImageFont.truetype('./Fonts/NHaasGroteskTXPro-65Md.ttf', 65)
+nh_font = ImageFont.truetype('./Fonts/NHaasGroteskTXPro-65Md.ttf', 40)
+nh_it_font = ImageFont.truetype('./Fonts/Neue_Italic.ttf', 15)
 #font18 = ImageFont.truetype(os.path.join(picdir, 'Font.ttc'), 18)
     
+eventName = getCurrEvent()    
 HBlackimage = Image.new('1', (400, 300), 255)  # 298*126
 drawblack = ImageDraw.Draw(HBlackimage)
-drawblack.text((30, 100), 'hello world', font = nh_font, fill = 0)
+# drawblack.text((30, 130), eventName, font = nh_font, fill = 0)
+drawblack.text((30, 100), "Coming up:", font = nh_it_font, fill = 0)
+drawblack.text((30, 120), "Articulation Group", font = nh_font, fill = 0)
+drawblack.text((30, 100), "Coming up:", font = nh_it_font, fill = 0)
+# drawblack.text((30, 100), 'hello world', font = nh_font, fill = 0)
 
 # HRYimage = Image.new('1', (400, 300), 255)  # 298*126  ryimage: red or yellow image  
 # drawry = ImageDraw.Draw(HRYimage)

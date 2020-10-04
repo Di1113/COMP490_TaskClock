@@ -18,6 +18,10 @@ import time
 from PIL import Image,ImageDraw,ImageFont
 import traceback
 
+sys.path.append('../Google_Cal')
+from quickstart import getCurrEvent
+eventName = getCurrEvent()    
+
 logging.basicConfig(level=logging.DEBUG)
 
 try:
@@ -31,7 +35,9 @@ try:
     
     # Drawing on the image
     logging.info("Drawing")    
-    nh_font = ImageFont.truetype('../../../../font/NHaasGroteskTXPro-65Md.ttf', 65)
+    # nh_font = ImageFont.truetype('../../../../font/NHaasGroteskTXPro-65Md.ttf', 40)
+    nh_font = ImageFont.truetype('../../../../font/Prova.ttf', 40)
+    nh_it_font = ImageFont.truetype('../../../../font/Neue_Italic.ttf', 15)
     # font24 = ImageFont.truetype(os.path.join(picdir, 'Font.ttc'), 24)
     # font18 = ImageFont.truetype(os.path.join(picdir, 'Font.ttc'), 18)
     
@@ -41,9 +47,12 @@ try:
     HRYimage = Image.new('1', (epd.width, epd.height), 255)  # 298*126  ryimage: red or yellow image  
     drawblack = ImageDraw.Draw(HBlackimage)
     drawry = ImageDraw.Draw(HRYimage)
-    drawblack.text((30, 100), 'hello world', font = nh_font, fill = 0)
+    # drawblack.text((30, 130), eventName, font = nh_font, fill = 0)
+    drawblack.text((30, 100), "Coming up:", font = nh_it_font, fill = 0)
+    drawblack.text((30, 120), "Articulation Group", font = nh_font, fill = 0)
+    drawblack.text((30, 160), "Meeting", font = nh_font, fill = 0)
     #drawblack.text((10, 20), '4.2inch e-Paper bc', font = font24, fill = 0)
-    #drawblack.text((150, 0), u'微雪电子', font = font24, fill = 0)    
+    #drawblack.text((150, 0), '', font = font24, fill = 0)    
     #drawblack.line((20, 50, 70, 100), fill = 0)
     #drawblack.line((70, 50, 20, 100), fill = 0)
     #drawblack.rectangle((20, 50, 70, 100), outline = 0)    
@@ -53,7 +62,7 @@ try:
     #drawry.rectangle((80, 50, 130, 100), fill = 0)
     #drawry.chord((200, 50, 250, 100), 0, 360, fill = 0)
     epd.display(epd.getbuffer(HBlackimage), epd.getbuffer(HRYimage))
-    time.sleep(2)
+    time.sleep(10)
     
     
     
