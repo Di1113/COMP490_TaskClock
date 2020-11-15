@@ -1,0 +1,11 @@
+how to check there is a swipe? 
+- use api to get swipe gesture, and distinguish left or right horizontal swipe based on direction.x < or > 0
+- issues: 
+	+ not sure how far the hand needs to be distanced from camera (needs experiments)
+	+ might detect multiple swipes in one swipe (needs to define a time interval for next swipe to be considered as a swipe)
+	+ not sure how fast the hands need to swipe to be detected (needs experiment and maybe modify detect speed as well)
+
+how to check left or right swipe? 
+- what direction? / what does direction data mean? 
+
+what does position data mean? 

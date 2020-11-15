@@ -1,0 +1,15 @@
+in LeapMotion folder on PC: 
+    detect_hswipe: read gesture data, set hswipe = TRUE when horizontal swipe is detected, set hswipe = FALSE after called send_hswipe_detected 
+
+    send_hswipe_detected: read hswipe every 1(?) second(s), if hswipe = TRUE, call mqtt_publisher to send message to raspberry pi 
+
+    mqtt_publisher: publish message to server to turn page 
+
+in Eink folder on RSP: 
+    mqtt_subscriber: wait for messages, if received message to turn page, call update_page with flage TURNPAGE(1)
+
+    update_page: CURRPAGE = main page = 0, = detail page #1 = 1; CURRPAGE = CURRPAGE xor TURNPAGE; retrieve google calendar, update task information if needed; and call disp_detailpage or disp_mainpage depend on CURRPAGE value.
+
+    disp_detailpage: display task detail information 
+
+    disp_mainpage: display main clock face 
