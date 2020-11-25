@@ -13,29 +13,31 @@ from quickstart import getCurrEvent
 
 logging.basicConfig(level=logging.DEBUG)
     
-# Drawing on the image
-logging.info("Drawing")    
-nh_font = ImageFont.truetype('./Fonts/NHaasGroteskTXPro-65Md.ttf', 40)
-nh_it_font = ImageFont.truetype('./Fonts/Neue_Italic.ttf', 15)
-#font18 = ImageFont.truetype(os.path.join(picdir, 'Font.ttc'), 18)
-    
-eventName = getCurrEvent()    
-HBlackimage = Image.new('1', (400, 300), 255)  # 298*126
-drawblack = ImageDraw.Draw(HBlackimage)
-# drawblack.text((30, 130), eventName, font = nh_font, fill = 0)
-drawblack.text((30, 100), "Coming up:", font = nh_it_font, fill = 0)
-drawblack.text((30, 120), "Articulation Group", font = nh_font, fill = 0)
-drawblack.text((30, 100), "Coming up:", font = nh_it_font, fill = 0)
-# drawblack.text((30, 100), 'hello world', font = nh_font, fill = 0)
+def dispMain():
+    # Drawing on the image
+    logging.info("Drawing")    
+    nh_font = ImageFont.truetype('./Fonts/NHaasGroteskTXPro-65Md.ttf', 40)
+    nh_it_font = ImageFont.truetype('./Fonts/Neue_Italic.ttf', 15)
+        
+    eventName = getCurrEvent()    
+    HBlackimage = Image.new('1', (400, 300), 255)  # 298*126
+    drawblack = ImageDraw.Draw(HBlackimage)
+    drawblack.text((30, 100), "Coming up:", font = nh_it_font, fill = 0)
+    drawblack.text((30, 120), "Articulation Group", font = nh_font, fill = 0)
+    drawblack.text((30, 100), "Coming up:", font = nh_it_font, fill = 0)
 
-# HRYimage = Image.new('1', (400, 300), 255)  # 298*126  ryimage: red or yellow image  
-# drawry = ImageDraw.Draw(HRYimage)
-# drawblack.line((20, 50, 70, 100), fill = 0)
-# drawblack.rectangle((20, 50, 70, 100), outline = 0)    
-# drawry.arc((140, 50, 190, 100), 0, 360, fill = 0)
-# drawry.chord((200, 50, 250, 100), 0, 360, fill = 0)
+    HBlackimage.show()
 
-HBlackimage.show()
-# HRYimage.show()
+def dispSubPage():
+    pass 
 
-exit()
+def dispEvtTitle():
+def dispTimeInfo():
+def dispProgBar():
+def dispNotes():
+def dispNextEvt():
+
+if __name__ == '__main__':
+    # main()
+    dispMain()
+    exit()
