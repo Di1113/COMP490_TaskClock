@@ -13,11 +13,8 @@ sys.path.insert(0,'/Users/xh/Library/Mobile Documents/com~apple~CloudDocs/Docume
 import Leap
 from Leap import CircleGesture, KeyTapGesture, ScreenTapGesture, SwipeGesture
 import paho.mqtt.publish as publish
- 
-MQTT_SERVER = "134.69.204.20"
-MQTT_PATH = "test_channel"
 
-class SampleListener(Leap.Listener):
+class SwipeListener(Leap.Listener):
 
     def on_init(self, controller):
         print "Initialized"
@@ -58,12 +55,12 @@ class SampleListener(Leap.Listener):
                         left_swipe = True 
 
         if right_swipe:
-            print "right swipe"
-            publish.single(MQTT_PATH, "right swipe", hostname=MQTT_SERVER)
+            print "right swipe -- display mainpage"
+            send_mqtt_cmd("mainpage")
             time.sleep(1)
         elif left_swipe:
-            print "left swipe" 
-            publish.single(MQTT_PATH, "left swipe", hostname=MQTT_SERVER)
+            print "left swipe -- display subpage" 
+            send_mqtt_cmd("subpage")
             time.sleep(1)
 
     def state_string(self, state):
@@ -79,12 +76,17 @@ class SampleListener(Leap.Listener):
         if state == Leap.Gesture.STATE_INVALID:
             return "STATE_INVALID"
 
+def send_mqtt_cmd(cmd): 
+    MQTT_SERVER = "134.69.204.20"
+    MQTT_PATH = "test_channel"
+    publish.single(MQTT_PATH, cmd, hostname=MQTT_SERVER)
+
 def main():
-    # Create a sample listener and controller
-    listener = SampleListener()
+    # Create a swipe listener and controller
+    listener = SwipeListener()
     controller = Leap.Controller()
 
-    # Have the sample listener receive events from the controller
+    # Have the swipe listener receive events from the controller
     controller.add_listener(listener)
 
     # Keep this process running until Enter is pressed
@@ -94,7 +96,7 @@ def main():
     except KeyboardInterrupt:
         pass
     finally:
-        # Remove the sample listener when done
+        # Remove the swipe listener when done
         controller.remove_listener(listener)
 
 

@@ -129,13 +129,15 @@ def getHrMinCtDn(days, hours, minutes):
     cdDays = ""
     cdHours = ""
     cdMins = ""
-
+    
     if days > 0:
         cdDays = str(days) + " days "
     if hours > 0:
         cdHours = str(hours) + " hours "
     if minutes > 0:
-        cdMins = str(minutes) + " minutes"
+        cdMins = str(minutes) + " minutes."
+    else:
+        cdMins = "0 minutes." 
 
     return cdDays + cdHours + cdMins
 
