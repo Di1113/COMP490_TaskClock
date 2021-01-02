@@ -1,0 +1,80 @@
+header h1, h2{
+    font-family: 'Lato', sans-serif;
+    letter-spacing: 0.05em;
+}
+
+h2{
+    font-family: 'Lato', sans-serif;
+    letter-spacing: 0.02em;
+}
+
+#minutes, #blocks{
+    font-size: 0.8em;
+    color: rgba(39,104,217,0.8);
+    text-transform: uppercase;
+}
+
+.table th, .table td{
+    line-height: 10px;
+    font-size: 10px;
+    min-height: 5px;
+    height: 10px;
+    margin: 0px !important;
+    padding: 0 5px !important;
+}
+
+/*td.ff-blk{
+    height: 10px;
+    line-height: 8px;
+    margin: 0 !important;
+    padding: 0 !important;
+}*/
+
+/*#form_container{
+    display: flex;
+    align-content: center;
+}*/
+
+/*form{
+    height: 300px;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-evenly;
+    flex-direction: row;
+    justify-content: center;
+}*/
+
+/*form div{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}*/
+
+/*form input{
+    width: 200px;
+    border: 1px solid #999;
+    box-sizing: border-box;    
+}
+*/
+/*textarea{
+    height: 50px;
+    width: 200px;
+    box-sizing: border-box;    
+}*/
+
+/*input:focus,
+textarea:focus {
+   Additional highlight for focused elements 
+  border-color: #000;
+  background-color: #C9DCFF;
+}
+*/
+/*button {
+    color: white;
+    background-color: #108CFF;
+    font-size: 15px;
+    border-radius: 0.5em;
+    padding: 0.6em 4em;
+    margin-top: 1em;
+}*/
