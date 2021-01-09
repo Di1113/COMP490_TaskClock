@@ -9,15 +9,15 @@
 </head>
 <body>
     <header>
-        <h1 class="display-4 text-center mt-5">Scheduler for Task Clock</h1>
+        <h1 class="display-4 text-center my-5">Task Clock Scheduler</h1>
     </header>
     <main>
         <div class="container">
-            <div class="row align-items-center justify-content-around"> 
+            <div class="row mt-5 align-items-top justify-content-around"> 
                 <!-- new task form and task time table -->
-                <div class="shadow px-md-3 px-lg-5 py-4 rounded-lg my-5">
+                <div>
                     <!-- new task form -->
-                    <form>
+                    <form class="shadow p-4 rounded-lg mx-4 my-md-5">
                     <h2 class="mb-4 text-center"> New Task Form </h2>
                         <div class="form-group">
                             <label for="taskname">Task Name</label>
@@ -31,11 +31,11 @@
 
                         <div class="form-group">
                             <label>Duration Blocks</label>
-                            <div class="form-row">
+                            <div class="form-group d-lg-flex">
                                 <!-- <label>Duration Blocks</label> -->
-                                <div class="col clearfix">
+                                <div class="col-lg-6 mb-lg-0 mb-2 d-flex clearfix align-items-center">
                                     <label for="duration_min" class="col" id="minutes">Minutes</label>
-                                    <div class="col btn-group btn-group-sm btn-group-toggle" data-toggle="buttons">
+                                    <div class="btn-group btn-group-sm btn-group-toggle" data-toggle="buttons">
                                       <label class="btn btn-outline-primary active">
                                         <input type="radio" name="duration_len_ops" id="30min" checked> 30
                                       </label>
@@ -48,9 +48,9 @@
                                     </div>
                                 </div>
 
-                                <div class="col clearfix">
+                                <div class="col-lg-6 d-flex clearfix align-items-center">
                                     <label for="duration_blk" class="col" id="blocks">Blocks</label>
-                                    <div class="col btn-group btn-group-sm btn-group-toggle" data-toggle="buttons">
+                                    <div class="btn-group btn-group-sm btn-group-toggle" data-toggle="buttons">
                                       <label class="btn btn-outline-primary active">
                                         <input type="radio" name="duration_blk_ops" id="1blk" checked> 1
                                       </label>
@@ -81,7 +81,7 @@
                         </div>
                     </form>
                 </div>
-                <div>
+                <div class="mt-5 mt-md-0">
                     <style>
                     .vl {
                       border-left: 2px solid #bebebe;
@@ -90,7 +90,7 @@
                     }
                     </style>
 
-                    <h2 class="mb-4 text-center">Task&nbsp;Timek&nbsp;Table</h2> 
+                    <h2 id="timetable" class="my-4 text-center">Task&nbsp;Time&nbsp;Table</h2> 
                     <!-- time table with tasks -->
                     <table class="table table-responsive">
                       <!-- <thead>

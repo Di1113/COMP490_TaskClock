@@ -23,12 +23,9 @@ h2{
     padding: 0 5px !important;
 }
 
-/*td.ff-blk{
-    height: 10px;
-    line-height: 8px;
-    margin: 0 !important;
-    padding: 0 !important;
-}*/
+.table td.ff-blk:hover{
+    background-color: rgba(0, 112, 249, 0.3);
+}
 
 /*#form_container{
     display: flex;
